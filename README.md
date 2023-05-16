@@ -13,7 +13,7 @@ Java 17, Swing, Jackson, Gradle
 ### Запуск
 
 * В корне проекта вызвать команды ```gradle client:jar``` и ```gradle server:jar```
-* jar-архивы сервера и клиента будут имеют пути ```server/build/libs/server.jar``` и ```client/build/libs/client.jar``` соответственно
+* jar-архивы сервера и клиента имеют пути ```server/build/libs/server.jar``` и ```client/build/libs/client.jar``` соответственно
 * Запуск архивов производится командами ```java -jar server/build/libs/server.jar``` и ```java -jar client/build/libs/client.jar``` соответственно
 * При запуске сервера в директории, из которой запускается JVM, предполагается наличие ```serverConfig.properties```-файла, в котором указан порт, используемый сервером для прослушивания соединений клиентов (формат "port=xxxx"). Если файла нет, то будет использован порт по умолчанию (2345).
 * При запуске клиента будет предложено ввести URL и port сервера. Для соединений используется ```localhost```
