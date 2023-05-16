@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout charset="UTF-8"
+                           pattern="%highlight{%d{HH:mm:ss,SSS} [%t] %-5level: %msg%n}">
+            </PatternLayout>
+        </Console>
+        <File name="task6FileAppender" fileName="log/task6/server.log">
+            <PatternLayout charset="UTF-8"
+                           pattern="%highlight{%d{HH:mm:ss,SSS} [%t] %-5level: %msg%n}">
+            </PatternLayout>
+        </File>
+    </Appenders>
+    <Loggers>
+        <Logger name="org.example.ClientHandler" level="info" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="task6FileAppender"/>
+        </Logger>
+
+        <Logger name="org.example.Server" level="info" additivity="false">>
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="task6FileAppender"/>
+        </Logger>
+
+        <Logger name="org.example.io.ConfigurationReader" level="info" additivity="false">>
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="task6FileAppender"/>
+        </Logger>
+
+        <Root level="warn">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="task6FileAppender"/>
+        </Root>
+    </Loggers>
+</Configuration>
