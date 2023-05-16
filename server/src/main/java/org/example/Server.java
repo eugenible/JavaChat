@@ -37,7 +37,7 @@ public class Server {
             Server server = new Server(ss);
             server.runServer();
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+            LOGGER.warn("Error occurred while opening server socket: {}", e.getMessage());
         }
     }
 
@@ -55,11 +55,10 @@ public class Server {
         try {
             while (!serverSocket.isClosed()) {
                 Socket client = serverSocket.accept();
-
                 new ClientHandler(client).start();
             }
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            LOGGER.warn("Error occurred while waiting for new connection: {}", e.getMessage());
         }
     }
 }
